@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Application Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header"> 
+            <div class="logo-container">
+                <img src="/mobile-application/assests/treknepal (2).png" alt="" class="logo-icon">
+                <h1>TrekNepal</h1>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><i class="fas fa-home"></i> Home</li>
+                    <li><i class="fas fa-compass"></i> Explore</li>
+                    <li><i class="fas fa-calendar-alt"></i> Bookings</li>
+                    <li><i class="fas fa-users"></i> Community</li>
+                    <li><i class="fas fa-user"></i> Profile</li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content animated">
+                <h2>Discover Nepal's Hidden Treasures</h2>
+                <p>Experience breathtaking views, rich cultural heritage, and unforgettable adventures in the heart of the Himalayas.</p>
+                <a href="#" class="btn">Start Exploring</a>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2 class="section-title">Why Choose TrekNepal</h2>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/mobile-application/assests/treknepal (2).png" alt="" class="logo-icon">
+
+                    </div>
+                    <p>Connecting adventurers to the beautiful landscapes and cultural experiences of Nepal since 2020.</p>
+
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>Popular Treks</li>
+                        <li>Travel Guides</li>
+                        <li>Trip Planning</li>
+                        <li>Safety Tips</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li>FAQs</li>
+                        <li>Contact Us</li>
+                        <li>Terms of Service</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates on treks, promotions, and travel tips.</p>    
+                </div>
+                <div class="copyright">
+                    &copy; 2025 TrekNepal. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.nav');
+            
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = nav.contains(event.target);
+                const isClickInsideHamburger = hamburger.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickInsideHamburger && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
